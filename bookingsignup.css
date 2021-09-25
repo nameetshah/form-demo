@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Literata');
+
+body
+{
+    height: 100vh;
+    background-color: white;
+    /*background-image: linear-gradient(to bottom right,rgb(50, 8, 153), rgb(81, 64, 122));*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: -20px 0 50px;
+}
+
+.leftform
+{
+    width: 50%;
+}
+
+.container {
+    background-image: linear-gradient(to bottom right, rgb(81, 64, 122),rgb(50, 8, 153));
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    overflow: hidden;
+    /*background-image: url("movieticket.png");*/
+    /*style="background-image:url('/pix/samples/bg1.png');background-repeat:no-repeat;*/
+    background-repeat: no-repeat;
+    /*width: 700px;*/
+    /*justify-content: space-around;*/
+    /*max-height: 400px;*/
+}
+
+.signupbtn {
+    border-radius: 20px;
+    border: midnightblue;
+    background-color: white;
+    color: midnightblue;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 12px 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.welcome
+{
+    margin-top: 15px;
+}
+
+input[type=text] {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+:focus::-webkit-input-placeholder {
+    transition: text-indent 0.4s 0.4s ease;
+    text-indent: -100%;
+    opacity: 1;
+}
+
+input[type=tel] {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+input[type=password] {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #e5e5e5;
+}
+.welcome
+{
+    color: #0dcaf0;
+}
+
+.tocinema
+{
+    color: white;
+}
+
+hr{
+    border-color: white;
+    background-color:  white;
+    color: white;
+    margin: 10px;
+}
+
+.custom-control-label::before,
+.custom-control-label::after {
+    top: .8rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}
