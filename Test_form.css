@@ -1,0 +1,22 @@
+
+.container
+{
+    justify-content: center;
+    align-self: center;
+    height: 100vh;
+}
+
+.formname-row
+{
+    background-color: #0a53be;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: border-box
+}
+
+.formname
+{
+    font-size: 60px;
+    color: white;
+    padding-left: 15px
+}
