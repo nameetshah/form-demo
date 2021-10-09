@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <!--    <script src="js/jquery-latest.min.js"></script>-->
     <link rel="stylesheet" href="Test_form.css">
-    </script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="Test_form.css">
+
     <title>Test Form</title>
 </head>
 <body>
@@ -24,17 +30,18 @@
         </div>
         <div class="row" style="height: border-box; border: 2px solid grey">
             <div class="col">
-                <form action="" class="registrationform" name="registration" method="post" id="form1" autocomplete="off">
+                <form action="" class="registrationform" name="registration" method="post" id="form1"
+                      autocomplete="off">
 
                     <!-- First Name-->
 
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-xs-12">
                             <div class="form-group">
-                                <label for="fname">First Name</label>
+                                <label for="fname">First Name<sup style="color: red">*</sup></label>
                                 <input type="text" id="fname" placeholder="First Name" class="form-control"
                                        aria-describedby="inputGroupPrepend" name="firstname">
-                                <span id="fnameError" style="color: red"></span>
+                                <span id="fnameError" class="fname-error" style="color: red"></span>
                             </div>
                         </div>
                     </div>
@@ -44,10 +51,10 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-xs-12">
                             <div class="form-group">
-                                <label for="lname">Last Name</label>
+                                <label for="lname">Last Name<sup style="color: red">*</sup></label>
                                 <input type="text" id="lname" placeholder="Last Name" class="form-control"
                                        aria-describedby="inputGroupPrepend" name="lastname">
-                                <span id="lnameError" style="color: red"></span>
+                                <span id="lnameError" class="lname-error" style="color: red"></span>
                             </div>
                         </div>
                     </div>
@@ -57,10 +64,10 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-xs-12">
                             <div class="form-group">
-                                <label for="username">Username"</label>
+                                <label for="username">Username<sup style="color: red"> *</sup></label>
                                 <input type="text" id="uname" placeholder="Username" class="form-control"
                                        aria-describedby="inputGroupPrepend" name="username">
-                                <span id="unameError" style="color: red"></span>
+                                <span id="unameError" class="uname-error" style="color: red"></span>
                             </div>
                         </div>
                     </div>
@@ -70,9 +77,10 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-xs-12">
                             <div class="form-group">
-                                <label for="dob">Date of Birth</label>
+                                <label for="dob">Date of Birth<sup style="color: red">*</sup></label>
                                 <input type="date" id="date" placeholder="Birth-Date" class="form-control"
                                        aria-describedby="inputGroupPrepend">
+                                <span id="dateError" class="date-error" style="color: red"></span>
                             </div>
                         </div>
                     </div>
@@ -81,20 +89,12 @@
 
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-xs-12">
-                            <div class="form-group" id="gender">
-                                Gender :
-                                <div class="form-check-inline">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="Male">
-                                        <label class="custom-control-label" for="customRadio1">Male</label>
-                                    </div>
+                            <div class="form-group">
+                                Gender <sup style="color: red">*</sup> :
+                                <div class="form-check-inline" id="gender-group">
+
                                 </div>
-                                <div class="form-check-inline">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="Male">
-                                        <label class="custom-control-label" for="customRadio2">Female</label>
-                                    </div>
-                                </div>
+                                <span id="genderError" class="gender-error" style="color: red"> </span>
                             </div>
                         </div>
                     </div>
@@ -103,28 +103,12 @@
 
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-xs-12">
-                            <div class="form-group" id="hobbies">
-                                Hobbies :
-                                <div class="form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="checkbox" value="Cricket">
-                                    <label class="form-check-label" for="invalidCheck" id="cricket"></label>
+                            <div class="form-group">
+                                Hobbies <sup style="color: red">*</sup> :
+                                <div class="form-check-inline" id="hobbies-group">
+
                                 </div>
-                                <div class="form-check-inline">
-                                    <input class="form-check-input" type="checkbox" value="Movies"  name="checkbox">
-                                    <label class="form-check-label" for="invalidCheck"  id="movies"></label>
-                                </div>
-                                <div class="form-check-inline">
-                                    <input class="form-check-input" type="checkbox" value="Travelling" name="checkbox">
-                                    <label class="form-check-label" for="invalidCheck"  id="travelling"></label>
-                                </div>
-                                <div class="form-check-inline">
-                                    <input class="form-check-input" type="checkbox" value="Reading books" name="checkbox">
-                                    <label class="form-check-label" for="invalidCheck"  id="reading-books"></label>
-                                </div>
-                                <div class="form-check-inline">
-                                    <input class="form-check-input" type="checkbox" value="Coding" name="checkbox">
-                                    <label class="form-check-label" for="invalidCheck"  id="coding"></label>
-                                </div>
+                                <span id="hobbiesError" class="hobbies-error" style="color: red"> </span>
                             </div>
                         </div>
                     </div>
@@ -134,13 +118,22 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-xs-12">
                             <div class="form-group">
-                                <label for="education">Education : </label>
-                                <select name="edu" id="education">
-                                    <option id="bca" value="Bachelor of Computer Application"></option>
-                                    <option id="mca" value="Master of Computer Application"></option>
-                                    <option id="msc-it" value="Master of Science - Information Technolgy"></option>
-                                    <option id="bsc-it" value="Bachelor of Science - Information Technology"></option>
-                                    <option id="comp-sci" value="Computer Science"></option>
+                                <label for="education">Education <sup style="color: red">*</sup> : </label>
+                                <select name="" id="education">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Country -->
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-xs-12">
+                            <div class="form-group">
+                                <label for="country">Country <sup style="color: red">*</sup> : </label>
+                                <select name="" id="country">
+
                                 </select>
                             </div>
                         </div>
@@ -149,8 +142,23 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-xs-12">
                             <div class="form-group">
+                                <label for="state">State <sup style="color: red">*</sup> :
+                                </label>
+                                <select name="" id="state">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- I agree -->
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-xs-12">
+                            <div class="form-group">
                                 <div class="form-check">
-                                    <input class="form-check-input agreement-btn" type="checkbox" id="checkme" onchange="document.getElementById('sendNewSms').disabled = !this.checked;">
+                                    <input class="form-check-input agreement-btn" type="checkbox" id="checkme"
+                                           onchange="document.getElementById('sendNewSms').disabled = !this.checked;">
                                     <label class="form-check-label" for="invalidCheck">
                                         I hereby agree all Terms and Conditions.
                                     </label>
@@ -164,7 +172,9 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-xs-12">
                             <div>
-                                <button class="btn btn-primary" type="submit" id="submit-btn" style="width: 100%; margin-bottom: 10px" disabled>Register</button>
+                                <button class="btn btn-primary" type="submit" id="submit-btn"
+                                        style="width: 100%; margin-bottom: 10px" disabled>Register
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -177,147 +187,154 @@
 
 <!-- Hobbies Script -->
 
+
+<script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js"></script>
 <script>
-    var label = [];
-    label[0] = "Cricket";
-    label[1] = "Movies";
-    label[2] = "Travelling";
-    label[3] = "Reading books";
-    label[4] = "Coding";
+    let hobbies = ["Cricket", "Movie", "Travelling", "Reading books", "Coding",];
+    let checkHTML = "";
 
+    $.each(hobbies, function (index, value) {
+        checkHTML += '<label style="padding-left: 15px"><input type="checkbox" id="hobbies" name="hobbies" value="' + value + '"> ' + value + '</label><br>';
+    });
 
-    document.getElementById("cricket").innerHTML = label[0];
-    document.getElementById("movies").innerHTML = label[1];
-    document.getElementById("travelling").innerHTML = label[2];
-    document.getElementById("reading-books").innerHTML = label[3];
-    document.getElementById("coding").innerHTML = label[4];
+    $("#hobbies-group").html(checkHTML);
 </script>
+
+<!-- Hobbies -->
 
 <!-- Education -->
 
 <script>
-    var option = [];
-    option[0] = "Bachelor of Computer Application";
-    option[1] = "Master of Computer Application";
-    option[2] = "Master of Science - Information Technology";
-    option[3] = "Bachelor of Science - Information Technology";
-    option[4] = "Computer Science";
-
-    document.getElementById("bca").innerHTML = option[0];
-    document.getElementById("mca").innerHTML = option[1];
-    document.getElementById("msc-it").innerHTML = option[2];
-    document.getElementById("bsc-it").innerHTML = option[3];
-    document.getElementById("comp-sci").innerHTML = option[4];
-
+    var education = ["Bachelor of Computer Application", "Master of Computer Application", "Master of Science - Information Technology", "Bachelor of Science - Information Technology", "Computer Science"];
+    var option = ""
+    for (var i = 0; i < education.length; i++) {
+        option += '<option value="' + education[i] + '">' + education[i] + "</option>"
+    }
+    document.getElementById('education').innerHTML = option
 </script>
+
+<!-- Education End -->
+
+<!-- Gender -->
+
+<script>
+    let gender = ["Male", "Female"];
+    let radioHTML = "";
+
+    $.each(gender, function (index, value) {
+        radioHTML += '<label style="padding-left: 15px"><input type="radio" id="gender" name="gender" value="' + value + '"> ' + value + '</label><br>';
+    });
+
+    $("#gender-group").html(radioHTML);
+</script>
+
+<!-- Gender End -->
+
 
 <!-- Disable Submit button -->
 
 <script>
-
     let checker = document.getElementById('checkme');
     let sendbtn = document.getElementById('submit-btn');
-    // when unchecked or checked, run the function
+    0
     checker.onchange = function () {
-        if (this.checked) {
-            sendbtn.disabled = false;
-        } else {
-            sendbtn.disabled = true;
-        }
-
+        sendbtn.disabled = !this.checked;
     }
 </script>
 
-<!-- First Name Validation -->
+<!-- Disable Submit button Ends -->
+
+<!-- Country & State API -->
 
 <script>
-    $(function () {
-        $("#fname").keypress(function (e) {
-            var keyCode = e.keyCode || e.which;
+    let auth_token;
+    $(document).ready(function () {
+        $.ajax({
+            type: "get",
+            success: function (data) {
+                auth_token = data.auth_token
+                getCountry(data.auth_token);
+            },
+            error: function (error) {
+                console.log(error);
+            },
+        })
+        $("#country").change(function () {
+            getState();
+        })
+    })
 
-            $("#fnameError").html("");
+    function getCountry(auth_token) {
+        $.ajax({
+            type: 'get',
+            url: "https://countriesnow.space/api/v0.1/countries",
+            success: function (data) {
+                console.log("data", data.data)
+                var option = ""
+                for (var i = 0; i < data.data.length; i++) {
+                    option += '<option value="' + data.data[i].country + '">' + data.data[i].country + "</option>"
+                }
+                document.getElementById('country').innerHTML = option
+            },
+        })
+    }
 
-            //Regex for Valid Characters i.e. Alphabets and Numbers.
-            var regexp = /^[A-Za-z]+$/;
+    $('#country').change(function (item) {
+        getState(item)
+    })
 
-            //Validate TextBox value against the Regex.
-            var isValid = regexp.test(String.fromCharCode(keyCode));
-            if (!isValid) {
-                $("#fnameError").html("Only Alphabets allowed.");
-            }
-                return isValid;
-        });
-    });
+    function getState() {
+        $.ajax({
+            type: 'post',
+            url: "https://countriesnow.space/api/v0.1/countries/states",
+            data: {
+                country: $('#country').val()
+            },
+            success: function (stateName) {
+                console.log("statename", stateName.data)
+                var option1 = ""
+                for (var j = 0; j < stateName.data.states.length; j++) {
+                    option1 += '<option value="' + stateName.data.states[j].name + '">' + stateName.data.states[j].name + "</option>"
+                }
+                document.getElementById('state').innerHTML = option1
+            },
+        })
+    }
 </script>
 
-<!-- Last Name Validation -->
+<!-- Country & State API Ends -->
 
-<script>
-    $(function () {
-        $("#lname").keypress(function (e) {
-            var keyCode = e.keyCode || e.which;
-
-            $("#lnameError").html("");
-
-            //Regex for Valid Characters i.e. Alphabets and Numbers.
-            var regexp = /^[A-Za-z]+$/;
-
-            //Validate TextBox value against the Regex.
-            var isValid = regexp.test(String.fromCharCode(keyCode));
-            if (!isValid) {
-                $("#lnameError").html("Only Alphabets allowed.");
-            }
-
-            return isValid;
-        });
-    });
-</script>
-
-<!-- Username Validation -->
-
-<script>
-    $(function () {
-        $("#uname").keypress(function (e) {
-            var keyCode = e.keyCode || e.which;
-
-            $("#unameError").html("");
-
-            //Regex for Valid Characters i.e. Alphabets and Numbers.
-            var regexp = /^[A-Za-z0-9]+$/;
-
-            //Validate TextBox value against the Regex.
-            var isValid = regexp.test(String.fromCharCode(keyCode));
-            if (!isValid) {
-                $("#unameError").html("Only Alphabets and Numbers are allowed.");
-            }
-
-            return isValid;
-        });
-    });
-</script>
+<!-- Pushing Data -->
 
 <script>
     $("#submit-btn").click(function (e) {
-        var fname =  $("#fname").val();
-        var lname =  $("#lname").val();
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
         var uname = $("#uname").val();
         var date = $("#date").val();
-        var gender = $('input[name="customRadio"]:checked').val();
-        var hobbies = $('input[name="checkbox"]:checked').val();
-        var education = $('input[name="edu"]:checked').val();
+        var gender = $('input[name="gender"]:checked').val();
+        var hobbies = $('input[name="hobbies"]:checked').val();
+        var education = $("#education").val();
+        var country = $('#country').val();
+        var state = $("#state").val();
 
         var item = [];
-        item.push(fname, lname, uname, date, gender,hobbies, education);
-        localStorage.item += JSON.stringify({ "FirstName": fname, "LastName": lname, "UserName": uname, "Date": date, "Gender": gender, "Hobbies": hobbies, "Education": education});
-
+        item.push(fname, lname, uname, date, gender, hobbies, education, country, state);
+        sessionStorage.item += JSON.stringify({
+            "FirstName": fname,
+            "LastName": lname,
+            "UserName": uname,
+            "Date": date,
+            "Gender": gender,
+            "Hobbies": hobbies,
+            "Education": education,
+            "Country": country,
+            "State": state
+        });
     });
-
 </script>
 
-
-<!--<script>
-    $("input[name="customRadio"]:checked").val();
-</script>-->
+<!-- Pushing Data Ends -->
 
 </body>
 </html>
